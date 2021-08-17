@@ -1,4 +1,4 @@
-# dotdotbot: reborn
+# dotdot: reborn
 
 this is the "2.0" version of the dot matrix printer robot interface, hopefully more extensible this time.
 
