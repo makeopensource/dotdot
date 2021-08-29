@@ -11,11 +11,11 @@ this api will directly interface with a printer, for local testing, we are using
 ## api endpoints
 
 - `/` [GET]: tests api functionality.
-- `/print/test` [POST] prints predefined test page to printer.  
 - `/print` [POST] send escaped and formatted POST data to printer. 
-- `/print/raw` [POST] sends raw POST data to printer.
-- `/print/ascii` [POST] take input test and convert to large ASCII art text.
-- `/print/image` [POST] take input image and convert to ASCII art. (maybe just directly output??)
+  - `/print/test` [POST] prints predefined test page to printer.  
+  - `/print/raw` [POST] sends raw POST data to printer.
+  - `/print/ascii` [POST] take input test and convert to large ASCII art text.
+  - `/print/image` [POST] take input image and convert to ASCII art. (maybe just directly output??)
 - `/bell` [POST] rings the printer bell.
 
 ## setup
