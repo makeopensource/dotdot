@@ -23,23 +23,23 @@ def print():
 
 @dotdot.route("/print/test")
 def print_test():
-    return "stuff"
+    return "stuff\n"
 
 @dotdot.route("/print/raw", methods=['GET', 'POST'])
 def print_raw():
     if flask.request.method == 'POST':
-        content = flask.request.json.get('content')
+        content = str(flask.request.json.get('content'))
         toprint.toprint(content)
-    return "stuff"
+    return "stuff\n"
 
 @dotdot.route("/print/ascii")
 def print_ascii():
-    return "stuff"
+    return "stuff\n"
 
 @dotdot.route("/print/image")
 def print_image():
-    return "stuff"
+    return "stuff\n"
 
 @dotdot.route("/bell")
 def bell():
-    return "stuff"
+    return "stuff\n"
