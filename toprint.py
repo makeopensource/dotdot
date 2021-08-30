@@ -3,8 +3,8 @@ import subprocess
 
 def toprint(cont):
     print(cont)
-    #with open("/dev/usb/lp0", "w") as outFile:
-    #    subprocess.run(["echo", cont], stdout=outFile)
+    with open("/dev/usb/lp0", "w") as outFile:
+        subprocess.run(["echo", cont], stdout=outFile)
 
 def eightyCharChunk(string):
     splits = []
@@ -15,4 +15,4 @@ def eightyCharChunk(string):
     return splits
 
 def sanitize(string):
-    return ascii(string)
+    return ascii(string)[1:-1]

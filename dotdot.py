@@ -18,39 +18,40 @@ def test():
     return "<p>Hello, World!</p>"
 
 @dotdot.route("/print", methods=['POST'])
-def print(response):
+def print():
     content = flask.request.json.get('content')
     sanitized = tp.sanitize(content)
     sanlist = tp.eightyCharChunk(sanitized)
     for sanstring in sanlist:
         tp.toprint(sanstring)
-    return response.status
+    return "stuff\n"
 
 @dotdot.route("/print/test", methods=['POST'])
-def print_test(response):
+def print_test():
     tp.toprint('hello world!')
-    return response.status
+    return "stuff\n"
 
 @dotdot.route("/print/raw", methods=['POST'])
-def print_raw(response):
+def print_raw():
     content = flask.request.json.get('content')
     tp.toprint(content)
-    return response.status
+    return "stuff\n"
 
 @dotdot.route("/print/ascii", methods=['POST'])
-def print_ascii(response):
+def print_ascii():
     content = flask.request.json.get('content')
-    sanitized = tp.sanitize(content).split('\n')
-    for sanstring in sanitized:
-        if len(sanstring) > 65:
+    sanitized = tp.sanitize(content)
+    asciii = word_to_ascii(phrase=sanitized, font_size=12, kerning=1).split('\n')
+    for sanstring in asciii:
+        if len(sanstring) > 80:
             raise CharacterLimitExceeded
         tp.toprint(sanstring)
-    return response.status
+    return "stuff\n"
 
 @dotdot.route("/print/image")
-def print_image(response):
-    return "stuff"
+def print_image():
+    return "stuff\n"
 
 @dotdot.route("/bell")
-def bell(response):
+def bell():
     return "ding"
