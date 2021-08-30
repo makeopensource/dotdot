@@ -26,6 +26,6 @@ async def on_message(message):
             tempy = tempy[1:]
         tempy = message.author.nick + ' said: ' + tempy 
         requests.post("http://127.0.0.1:5000/print", json={"content": tempy})
-        await message.channel.send("printing...")
+        await message.channel.add_reaction('🖨️')
 
 client.run(TOKEN)
